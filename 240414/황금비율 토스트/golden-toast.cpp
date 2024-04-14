@@ -17,10 +17,10 @@ int main() {
     char command;
     cin >> command;
 
-    if (command == 'L' && it != l.begin())
+    if (command == 'L')
       it--;
 
-    else if (command == 'R' && it != l.end())
+    else if (command == 'R')
       it++;
 
     else if (command == 'D' && it != l.end())
