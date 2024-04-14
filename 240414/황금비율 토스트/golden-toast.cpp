@@ -19,14 +19,12 @@ int main() {
 
     if (command == 'L')
       it--;
-
+  
     else if (command == 'R')
-      it++;
+        it++;
 
-    else if (command == 'D') {
-      it = l.erase(it); // 원소 'a'를 제거합니다.
-      cout << *it << endl;
-    }
+    else if (command == 'D')
+      it = l.erase(it);
 
     else if (command == 'P') {
       char a;
