@@ -17,16 +17,14 @@ int main() {
     char command;
     cin >> command;
 
-    if (command == 'L')
+    if (command == 'L' && it != l.begin())
       it--;
 
-    else if (command == 'R')
+    else if (command == 'R' && it != l.end())
       it++;
 
-    else if (command == 'D') {
-      if (it != l.end())
-        it = l.erase(it);
-    }
+    else if (command == 'D' && it != l.end())
+      it = l.erase(it);
 
     else if (command == 'P') {
       char a;
