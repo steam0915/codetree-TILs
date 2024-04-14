@@ -19,12 +19,12 @@ int main() {
 
     if (command == 'L')
       it--;
-  
+
     else if (command == 'R')
-        it++;
+      it++;
 
     else if (command == 'D') {
-      if(!l.empty())
+      if (it != l.end())
         it = l.erase(it);
     }
 
