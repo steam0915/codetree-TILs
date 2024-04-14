@@ -23,8 +23,10 @@ int main() {
     else if (command == 'R')
         it++;
 
-    else if (command == 'D')
-      it = l.erase(it);
+    else if (command == 'D') {
+      if(!l.empty())
+        it = l.erase(it);
+    }
 
     else if (command == 'P') {
       char a;
