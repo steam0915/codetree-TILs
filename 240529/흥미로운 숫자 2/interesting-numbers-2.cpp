@@ -10,22 +10,20 @@ bool f(int num) {
   string str = to_string(num);
   int check[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-  bool xx = false, yy = false;
-  int cnt = 0;
+  int xx = 0, yy = 0;
 
   for (int i = 0; i < str.size(); i++)
     check[str[i] - '0']++;
 
   for (int i = 0; i < 10; i++) {
     if (check[i] == 1)
-      yy = true;
+      yy++;
     if (check[i] > 1)
-      cnt++;
+      xx++;
   }
-  if (cnt == 1)
-    xx = true;
-
-  return xx && yy;
+  if (xx == 1 && yy == 1)
+    return true;
+  return false;
 }
 
 int main() {
