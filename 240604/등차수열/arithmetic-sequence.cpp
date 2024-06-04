@@ -3,8 +3,8 @@
 
 using namespace std;
 
-int ans;
-int arr[105];
+int ans = -1;
+double arr[105];
 int max_range = -1, min_range = 101;
 int main() {
   int n;
@@ -18,10 +18,12 @@ int main() {
   }
 
   for (int i = min_range; i <= max_range; i++) {
+    int cnt = 0;
     for (int j = 1; j < n; j++)
       for (int k = j + 1; k <= n; k++)
-        if (abs(arr[j] - i) == abs(arr[k] - i))
-          ans++;
+        if ((arr[j] + arr[k]) / 2 == i)
+          cnt++;
+    ans = max(ans, cnt);
   }
 
   cout << ans;
