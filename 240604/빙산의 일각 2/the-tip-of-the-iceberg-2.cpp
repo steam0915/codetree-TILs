@@ -10,7 +10,7 @@ int main() {
   for (int i = 1; i <= n; i++)
     cin >> arr[i];
 
-  for (int i = 1; i <= 100; i++) {
+  for (int i = 1; i <= 1000; i++) {
     int start = 1, end = 1, cnt = 0;
     while (end <= n) {
 
