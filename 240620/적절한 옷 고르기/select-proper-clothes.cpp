@@ -9,7 +9,7 @@ int value[205];
 pair<int, int> days[205];
 void Initialize() {
   for (int i = 1; i <= n; i++)
-    dp[1][i] = -1;
+    dp[1][i] = 0;
 }
 
 int main() {
