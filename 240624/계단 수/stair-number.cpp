@@ -6,8 +6,8 @@
 using namespace std;
 
 int n;
-unsigned int dp[1005][10];
-unsigned int ans;
+long long int dp[1005][10];
+long long int ans;
 
 void Initialize() {
   for (int i = 0; i < 10; i++)
