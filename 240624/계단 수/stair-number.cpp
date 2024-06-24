@@ -33,8 +33,8 @@ int main() {
   }
 
   for (int i = 1; i <= 9; i++)
-    ans = (ans % MOD + dp[n][i] % MOD) % MOD;
+    ans +=  dp[n][i];
 
-  cout << ans;
+  cout << ans % MOD;
   return 0;
 }
