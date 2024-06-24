@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <iostream>
 
-#define MOD 10000000007
+#define MOD 1000000007
 
 using namespace std;
 
@@ -22,18 +22,18 @@ int main() {
   for (int i = 2; i <= n; i++) {
     for (int j = 0; j <= 9; j++) {
       if (j == 0)
-        dp[i][j] = dp[i - 1][1] % MOD;
+        dp[i][j] = dp[i - 1][1];
 
       else if (j == 9)
-        dp[i][j] = dp[i - 1][8] % MOD;
+        dp[i][j] = dp[i - 1][8];
 
       else
-        dp[i][j] = (dp[i - 1][j - 1] % MOD + dp[i - 1][j + 1] % MOD) % MOD;
+        dp[i][j] = (dp[i - 1][j - 1] + dp[i - 1][j + 1]) % MOD;
     }
   }
 
   for (int i = 1; i <= 9; i++)
-    ans +=  dp[n][i];
+    ans =  (ans + dp[n][i]) % MOD;
 
   cout << ans % MOD;
   return 0;
