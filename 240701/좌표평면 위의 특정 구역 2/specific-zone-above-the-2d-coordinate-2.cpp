@@ -1,9 +1,11 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
+#include <climits>
+
 using namespace std;
 
-int n, ans = 1e9;
+int n, ans = INT_MAX;
 pair<int, int> arr[105];
 int main() {
   cin >> n;
