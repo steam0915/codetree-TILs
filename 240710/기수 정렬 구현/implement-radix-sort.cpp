@@ -21,10 +21,11 @@ void radix_sort() {
     vector<int> store_arr;
 
     for (int i = 0; i < 10; i++)
-      for (int j = 0; j < (int)new_arr[i].size(); i++)
+      for (int j = 0; j < (int)new_arr[i].size(); j++)
         store_arr.push_back(new_arr[i][j]);
 
     arr = store_arr;
+  
   }
 }
 
