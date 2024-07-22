@@ -5,7 +5,7 @@ using namespace std;
 
 int n, m, d, s;
 int ans;
-int arr[55][3];
+int arr[1005][3];
 int sick[55][2];
 int main() {
   cin >> n >> m >> d >> s;
