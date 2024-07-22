@@ -19,7 +19,7 @@ int main() {
     bool check[55][105];
     for (int i = 1; i <= d; i++) {
       if (arr[i][1] == cheese) {
-        for (int t = arr[i][2]; t <= 100; t++)
+        for (int t = arr[i][2] + 1; t <= 100; t++)
           check[arr[i][0]][t] = true;
       }
     }
