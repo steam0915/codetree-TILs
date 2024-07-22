@@ -18,12 +18,21 @@ int main() {
 
       bool flag = true;
       for (int i = 0; i < k; i++) {
-        if (!(arr[i][a] > arr[i][b]))
+        int a_score, b_score;
+        for (int j = 0; j < n; j++) {
+          if (arr[i][j] == a + 1)
+            a_score = n - j;
+          if (arr[i][j] == b + 1)
+            b_score = n - j;
+        }
+
+        if (!(a_score > b_score))
           flag = false;
       }
 
-      if (flag)
+      if (flag) 
         cnt++;
+        
     }
   }
   cout << cnt;
