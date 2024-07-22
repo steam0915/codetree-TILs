@@ -7,6 +7,7 @@ int n, m, d, s;
 int ans;
 int arr[1005][3];
 int sick[55][2];
+
 int main() {
   cin >> n >> m >> d >> s;
   for (int i = 1; i <= d; i++)
@@ -19,7 +20,7 @@ int main() {
     bool check[55][105] = {};
     for (int i = 1; i <= d; i++) {
       if (arr[i][1] == cheese) {
-        for (int t = arr[i][2] + 1; t <= 100; t++)
+        for (int t = arr[i][2] + 1; t <= 101; t++)
           check[arr[i][0]][t] = true;
       }
     }
@@ -33,7 +34,7 @@ int main() {
 
     if (!is_wrong) {
       for (int i = 1; i <= n; i++)
-        if (check[i][100])
+        if (check[i][101])
           cnt++;
     }
 
