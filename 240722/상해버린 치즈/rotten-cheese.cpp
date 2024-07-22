@@ -16,14 +16,14 @@ int main() {
     cin >> sick[i][0] >> sick[i][1];
 
   for (int cheese = 1; cheese <= m; cheese++) {
-    bool check[55][105];
+    bool check[55][105] = {};
     for (int i = 1; i <= d; i++) {
       if (arr[i][1] == cheese) {
         for (int t = arr[i][2] + 1; t <= 100; t++)
           check[arr[i][0]][t] = true;
       }
     }
-    
+
     int cnt = 0;
     bool is_wrong = false;
     for (int i = 1; i <= s; i++) {
