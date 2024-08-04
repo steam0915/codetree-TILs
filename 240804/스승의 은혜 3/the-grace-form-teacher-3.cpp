@@ -17,7 +17,7 @@ int main() {
     p[i] /= 2;
 
     for (int j = 0; j < n; j++)
-      sum_price[j] = p[i] + s[i];
+      sum_price[j] = p[j] + s[j];
     sort(sum_price, sum_price + n);
     int budget = 0;
     for (int j = 0; j < n; j++) {
