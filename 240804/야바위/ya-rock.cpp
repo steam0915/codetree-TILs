@@ -10,9 +10,9 @@ int main() {
   for (int i = 0; i < n; i++)
     cin >> order[i][0] >> order[i][1] >> order[i][2];
 
-  for (int stone_pos = 0; stone_pos < 3; stone_pos++) {
+  for (int stone_pos = 1; stone_pos <= 3; stone_pos++) {
     int cnt = 0;
-    bool cup[3] = {};
+    bool cup[4] = {};
     cup[stone_pos] = true;
 
     for (int i = 0; i < n; i++) {
