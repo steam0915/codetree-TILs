@@ -13,7 +13,7 @@ void f() {
   for (int i = 0; i <= 10; i++)
     for (int j = 0; j <= 10; j++)
       for (int k = 0; k <= 10; k++) {
-        
+
         bool check[MAX_N] = {};
 
         for (int xy = 0; xy < 3; xy++) {
@@ -33,9 +33,10 @@ void f() {
           }
         }
 
-        bool flag;
+        bool flag = true;
         for (int idx = 0; idx < n; idx++)
-          flag = check[idx];
+          if (!check[idx])
+            flag = false;
 
         if (flag) {
           ans = true;
