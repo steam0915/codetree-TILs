@@ -3,17 +3,18 @@
 
 using namespace std;
 
-struct S {
-  string s_c;
-  char m_t;
-  int tm;
+class C {
+public:
+  string sc;
+  char mt;
+  int t;
 };
 
 int main() {
-  S secret;
-  cin >> secret.s_c >> secret.m_t >> secret.tm;
-  cout << "secret code : " << secret.s_c << endl
-       << "meeting point : " << secret.m_t << endl
-       << "time : " << secret.tm;
+  C secret;
+  cin >> secret.sc >> secret.mt >> secret.t;
+  cout << "secret code : " << secret.sc << endl
+       << "meeting point : " << secret.mt << endl
+       << "time : " << secret.t;
   return 0;
 }
