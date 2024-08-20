@@ -25,7 +25,7 @@ int main() {
   for (int i = 0; i < n; i++)
     cin >> arr[i].name >> arr[i].height >> arr[i].weight;
 
-  sort(arr, arr + 5, cmp);
+  sort(arr, arr + n, cmp);
   for (int i = 0; i < n; i++)
     cout << arr[i].name << " " << arr[i].height << " " << arr[i].weight << endl;
   
