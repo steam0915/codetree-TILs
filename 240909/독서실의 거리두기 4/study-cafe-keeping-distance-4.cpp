@@ -6,7 +6,7 @@ using namespace std;
 
 int n, ans;
 string str;
-int arr[20];
+int arr[100];
 
 int main() {
   cin >> n;
