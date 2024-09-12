@@ -3,38 +3,34 @@
 
 using namespace std;
 
-int n, k, ans, ans_num;
-int arr[100];
+int n, k, ans_num, ans_cnt;
+int arr[105];
 int main() {
   cin >> n >> k;
-
-  for (int i = 0; i < n; i++)
+  for (int i = 1; i <= n; i++)
     cin >> arr[i];
 
-  for (int num = 0; num <= 1000000; num++) {
-    int cnt = 0;
-    bool visit[100] = {};
-
-    for (int i = 0; i < n; i++) {
-      if (arr[i] == num) {
-        visit[i] = true;
-        for (int j = 1; j <= k; j++) {
-          if (i + j < n && arr[i + j] == arr[i])
-            visit[i + j] = true;
-        }
+  for (int bomb_num = 0; bomb_num <= 1000000; bomb_num++) {
+    bool visit[105] = {};
+    for (int i = 1; i <= n; i++) {
+      for (int dis = -k; dis <= k; dis++) {
+        int idx = i + dis;
+        if ((1 <= idx && idx <= n) && arr[i] == bomb_num && arr[i] == arr[idx])
+          visit[i] = visit[idx] = true;
       }
     }
 
-    for (int i = 0; i < n; i++)
+    int cnt = 0;
+    for (int i = 1; i <= n; i++)
       if (visit[i])
         cnt++;
 
-    if (cnt > ans_num) {
-      ans_num = cnt;
-      ans = num;
+    if (ans_cnt <= cnt) {
+      ans_cnt = cnt;
+      ans_num = bomb_num;
     }
   }
 
-  cout << ans;
+  cout << ans_num;
   return 0;
 }
