@@ -32,12 +32,12 @@ int main() {
 
   for (int i = 0; i < n; i++) {
     vector<int> v;
-    bool Same = true;
 
     for (int j = 0; j < n; j++)
       v.push_back(arr[j][i]);
 
     for (int j = 0; j < n - m + 1; j++) {
+      bool Same = true;
       for (int k = 0; k < m - 1; k++)
         if (v[j + k] != v[j + k + 1])
           Same = false;
