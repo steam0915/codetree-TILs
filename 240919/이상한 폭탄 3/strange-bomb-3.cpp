@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int n, k, ans_num, ans_cnt = -1;
+int n, k, ans_num, ans_cnt;
 int arr[105];
 
 int main() {
@@ -24,7 +24,7 @@ int main() {
       if (abs(arr[v[i]] - arr[v[i + 1]]) <= k)
         cnt++;
 
-    if (cnt >= ans_cnt) {
+    if (cnt != 0 && cnt >= ans_cnt) {
       ans_cnt = cnt;
       ans_num = bomb_num;
     } 
