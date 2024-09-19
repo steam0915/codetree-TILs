@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int n, k, ans_num, ans_cnt;
+int n, k, ans_num, ans_cnt = -1;
 int arr[105];
 
 int main() {
