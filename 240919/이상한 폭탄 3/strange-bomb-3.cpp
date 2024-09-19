@@ -1,34 +1,33 @@
 #include <algorithm>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 int n, k, ans_num, ans_cnt;
 int arr[105];
+
 int main() {
   cin >> n >> k;
   for (int i = 1; i <= n; i++)
     cin >> arr[i];
 
   for (int bomb_num = 0; bomb_num <= 1000000; bomb_num++) {
-    bool visit[105] = {};
-    for (int i = 1; i <= n; i++) {
-      for (int dis = -k; dis <= k; dis++) {
-        int idx = i + dis;
-        if ((1 <= idx && idx <= n) && arr[i] == bomb_num && arr[i] == arr[idx])
-          visit[i] = visit[idx] = true;
-      }
-    }
-
+    vector<int> v;
     int cnt = 0;
+
     for (int i = 1; i <= n; i++)
-      if (visit[i])
+      if (arr[i] == bomb_num)
+        v.push_back(i);
+
+    for (int i = 0; i < (int)v.size() - 1; i++)
+      if (abs(arr[v[i]] - arr[v[i + 1]]) <= k)
         cnt++;
 
-    if (ans_cnt <= cnt) {
+    if (cnt >= ans_cnt) {
       ans_cnt = cnt;
       ans_num = bomb_num;
-    }
+    } 
   }
 
   cout << ans_num;
