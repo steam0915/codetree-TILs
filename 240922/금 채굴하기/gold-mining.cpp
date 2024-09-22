@@ -56,7 +56,7 @@ int main() {
           }
 
         int Gold_Value = cnt * m;
-        if (Gold_Value >
+        if (Gold_Value >=
             Range_Size * Range_Size + (Range_Size + 1) * (Range_Size + 1))
           ans = max(ans, cnt);
 
