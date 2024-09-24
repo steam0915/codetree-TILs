@@ -53,13 +53,6 @@ int main() {
                         max(ans,
                             Make_Sum({x1, y1}, {x1 + x1_len, y1 + y1_len}) +
                                 Make_Sum({x2, y2}, {x2 + x2_len, y2 + y2_len}));
-
-                    if (Make_Sum({x1, y1}, {x1 + x1_len, y1 + y1_len}) +
-                            Make_Sum({x2, y2}, {x2 + x2_len, y2 + y2_len}) ==
-                        100)
-                      cout << x1 << " " << y1 << " " << x1 + x1_len << " "
-                           << y1 + y1_len << " " << x2 << " " << y2 << " "
-                           << x2 + x2_len << " " << y2 + y2_len << endl;
                   }
         }
 
