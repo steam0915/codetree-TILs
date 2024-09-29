@@ -19,6 +19,8 @@ int main() {
     if(arr[i] == n)ans = i+1;
   }
 
-  cout << ans;
+  if(!sorted())cout << ans;
+
+  else cout << "0";
   return 0;
 }
