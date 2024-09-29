@@ -16,12 +16,12 @@ bool sorted() {
 
 int main() {
   cin >> n;
-  for (int i = 0; i < n; i++)
+  for (int i = 0; i < 2 * n; i++)
     cin >> arr[i];
 
-  sort(arr,arr+n);
-
-  for(int i=0;i<n/2;i++) 
+  sort(arr,arr+2*n);
+  
+  for(int i=0;i<n;i++) 
     ans = min(ans,arr[n+i] - arr[i]);
 
   cout << ans;
