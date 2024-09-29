@@ -1,28 +1,21 @@
 #include <algorithm>
-#include <iostream>
 #include <climits>
+#include <iostream>
 
 using namespace std;
 
 int n, ans = INT_MAX;
 int arr[100005];
-bool sorted() {
-  for (int i = 0; i < n - 1; i++)
-    if (arr[i] > arr[i + 1])
-      return false;
-
-  return true;
-}
 
 int main() {
   cin >> n;
-  for (int i = 0; i < 2 * n; i++)
+  for (int i = 1; i <= 2 * n; i++)
     cin >> arr[i];
 
-  sort(arr,arr+2*n);
-  
-  for(int i=0;i<n;i++) 
-    ans = min(ans,arr[n+i] - arr[i]);
+  sort(arr + 1, arr + 2 * n + 1);
+
+  for (int i = 1; i <= n; i++)
+    ans = min(ans, arr[n + i] - arr[i]);
 
   cout << ans;
   return 0;
