@@ -5,7 +5,7 @@
 using namespace std;
 
 int n, ans = INT_MAX;
-int arr[100000];
+int arr[100005];
 bool sorted() {
   for (int i = 0; i < n - 1; i++)
     if (arr[i] > arr[i + 1])
