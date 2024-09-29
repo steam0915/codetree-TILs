@@ -6,7 +6,7 @@ using namespace std;
 
 int n, k;
 pair<int, int> arr[100];
-pair<int, int> ans = {0, 0};
+pair<int, int> ans = {0, 2};
 bool visit[100];
 
 void Can_Exposed(int idx) {
@@ -38,7 +38,7 @@ int main() {
       if (visit[x])
         cnt++;
 
-    if (cnt != 0 && cnt >= ans.second)
+    if (cnt >= ans.second)
       ans = {arr[i].first, cnt};
 
     i = j;
