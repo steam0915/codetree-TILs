@@ -4,8 +4,8 @@
 
 using namespace std;
 
-unsigned int n, ans = INT32_MAX;
-unsigned int arr[100005];
+int n, ans = INT_MAX;
+int arr[200005];
 
 int main() {
   cin >> n;
@@ -16,6 +16,7 @@ int main() {
 
   for (int i = 1; i <= n; i++)
     ans = min(ans, arr[n + i] - arr[i]);
+
   cout << ans;
   return 0;
 }
