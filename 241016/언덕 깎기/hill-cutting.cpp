@@ -41,7 +41,7 @@ int main() {
     int minh = arr[i] - Height_Diff;
     int minh_idx;
     for (int j = i - 1; j >= 0; j--) {
-      if (arr[j] <= maxh) {
+      if (arr[j] <= minh) {
         minh_idx = j;
         break;
       }
