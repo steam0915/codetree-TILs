@@ -6,7 +6,8 @@ using namespace std;
 int n, ans = 1e9;
 int arr[1000];
 
-#define Height_Diff 17;
+#define Max_Height 100
+#define Height_Diff 17
 
 int main() {
   cin >> n;
@@ -15,44 +16,21 @@ int main() {
 
   sort(arr, arr + n);
 
-  for (int i = 0; i < n; i++) {
-    int minh = arr[i];
-    int maxh = arr[i] + Height_Diff;
-    int maxh_idx;
-    for (int j = i + 1; j < n; j++) {
-      if (arr[j] >= maxh) {
-        maxh_idx = j;
-        break;
-      }
-    }
-
+  for (int i = 0; i <= Max_Height - Height_Diff; i++) {
+    int minh_idx = 0, maxh_idx = n - 1;
     int cost = 0;
-    for (int j = 0; j < i; j++)
-      cost += (minh - arr[j]) * (minh - arr[j]);
 
-    for (int j = maxh_idx; j < n; j++)
-      cost += (maxh - arr[j]) * (maxh - arr[j]);
+    while (arr[minh_idx] <= i)
+      minh_idx++;
 
-    ans = min(ans, cost);
-  }
+    while (arr[maxh_idx] >= i + Height_Diff)
+      maxh_idx--;
 
-  for (int i = n; i >= 0; i--) {
-    int maxh = arr[i];
-    int minh = arr[i] - Height_Diff;
-    int minh_idx;
-    for (int j = i - 1; j >= 0; j--) {
-      if (arr[j] <= minh) {
-        minh_idx = j;
-        break;
-      }
-    }
+    for (int j = 0; j < minh_idx; j++)
+      cost += (i - arr[j]) * (i - arr[j]);
 
-    int cost = 0;
-    for (int j = 0; j <= minh_idx; j++)
-      cost += (minh - arr[j]) * (minh - arr[j]);
-
-    for (int j = i + 1; j < n; j++)
-      cost += (maxh - arr[j]) * (maxh - arr[j]);
+    for (int j = maxh_idx + 1; j < n; j++)
+      cost += (i + Height_Diff - arr[j]) * (i + Height_Diff - arr[j]);
 
     ans = min(ans, cost);
   }
