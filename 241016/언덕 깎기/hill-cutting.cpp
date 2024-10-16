@@ -28,9 +28,30 @@ int main() {
 
     int cost = 0;
     for (int j = 0; j < i; j++)
-      cost += (arr[i] - arr[j]) * (arr[i] - arr[j]);
+      cost += (minh - arr[j]) * (minh - arr[j]);
 
     for (int j = maxh_idx; j < n; j++)
+      cost += (maxh - arr[j]) * (maxh - arr[j]);
+
+    ans = min(ans, cost);
+  }
+
+  for (int i = n; i >= 0; i--) {
+    int maxh = arr[i];
+    int minh = arr[i] - Height_Diff;
+    int minh_idx;
+    for (int j = i - 1; j >= 0; j--) {
+      if (arr[j] <= maxh) {
+        minh_idx = j;
+        break;
+      }
+    }
+
+    int cost = 0;
+    for (int j = 0; j <= minh_idx; j++)
+      cost += (minh - arr[j]) * (minh - arr[j]);
+
+    for (int j = i + 1; j < n; j++)
       cost += (maxh - arr[j]) * (maxh - arr[j]);
 
     ans = min(ans, cost);
