@@ -21,7 +21,7 @@ void Explosion(int r, int c) {
 
   for (int dir = 0; dir < 4; dir++) {
     int x = r, y = c;
-    for (int i = 1; i < Grid[x][y]; i++) {
+    for (int i = 1; i < Grid[r][c]; i++) {
       int nx = x + dx[dir], ny = y + dy[dir];
       if (!safe(nx, ny))
         break;
@@ -50,7 +50,7 @@ void Drop() {
 void Find_Max() {
   for (int x = 0; x < n; x++)
     for (int y = 0; y < n; y++) {
-      
+
       int dx[2] = {0, 1}, dy[2] = {1, 0};
       for (int dir = 0; dir < 2; dir++) {
         int nx = x + dx[dir], ny = y + dy[dir];
