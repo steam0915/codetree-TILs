@@ -1,2 +1,2 @@
-print("""Hello
-World""")
+print("""Hello students!
+Welcome to LeebrosCode!""")
