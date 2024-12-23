@@ -69,6 +69,28 @@ int main() {
       Drip(c);
   }
 
+  bool Can_Exploison[105][105] = {};
+  for (int c = 1; c <= n; c++) {
+    for (int r = 1; r <= n - m + 1; r++) {
+      bool bomb = true;
+
+      for (int i = 0; i < m - 1; i++)
+        if (Grid[r + i][c] != Grid[r + i + 1][c]) {
+          bomb = false;
+          break;
+        }
+
+      if (bomb)
+        for (int i = 0; i < m; i++)
+          Can_Exploison[r + i][c] = true;
+    }
+  }
+
+  for (int r = 1; r <= n; r++)
+    for (int c = 1; c <= n; c++)
+      if (Can_Exploison[r][c])
+        Grid[r][c] = 0;
+
   for (int i = 1; i <= n; i++)
     for (int j = 1; j <= n; j++)
       if (Grid[i][j])
